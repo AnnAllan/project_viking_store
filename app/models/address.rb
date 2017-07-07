@@ -19,6 +19,7 @@ class Address < ApplicationRecord
                             length: {is: 5}
 
   validates :city_id, :state_id,
+                      length: {maximum: 64},
                       numericality: {only_integer: true},
                       presence: true
 

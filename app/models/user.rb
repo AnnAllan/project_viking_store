@@ -14,10 +14,11 @@ class User < ApplicationRecord
 
   validates :first_name,
             :last_name,
-            length: {maximum: 250},
+            length: {maximum: 64},
             presence: true
 
   validates :email,
+            length: {maximum: 64},
             presence: true,
             format: {with:/@/}
 

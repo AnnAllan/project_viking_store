@@ -109,6 +109,7 @@ def generate_user
   u[:first_name]  = first_name
   u[:last_name]   = last_name
   u[:email]       = Faker::Internet.email("#{first_name} #{last_name}")
+  u[:telephone] = Faker::Number.number(10)
   u[:created_at]  = creation_date
   u.save
 
@@ -189,6 +190,7 @@ def generate_credit_cards_for_checked_out_orders
     # last 4 digits only
     card[:card_number] = Faker::Number.number(16)
     card[:exp_month] = rand(12) + 1
+    card[:ccv] = Faker::Number.number(3)
 
     #so far, only good cards
     card[:exp_year] = Time.now.year + rand(5)

@@ -3,7 +3,7 @@ class Admin::AddressesController < AdminController
 
   def index
     if params[:user_id]
-      if User.exixts?(params[:user_id])
+      if User.exists?(params[:user_id])
         @user = User.find(params[:user_id])
         @addresses = Address.where(user_id: @user.id)
       else
@@ -58,6 +58,9 @@ class Admin::AddressesController < AdminController
   end
 
   private
+  def set_address
+    @address = Address.find(params[:id])
+  end
 
   def safe_address_params
     params.require(:address).permit(:street_address, :state_id, :city_id, :user_id, :zip_code)

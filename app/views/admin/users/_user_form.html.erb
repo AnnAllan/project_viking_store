@@ -4,12 +4,12 @@
 
     <%= form_for [:admin, user], {:html => {:class => "form-horizontal" }} do |f| %>
 
-      <h3><%= form_type %> user</h3>
+      <h3><%= form_type %> user: <%= user.first_name %><%= user.last_name %></h3>
 
       <div class="form-group">
         <%= f.label "User ID:", :class => "col-md-4 control-label" %>
         <div class="col-md-8">
-          <%= display_if(user.id) %>
+          <%= user.id ? "#{user.id}" : "N/A" %>
         </div>
       </div>
 
@@ -35,6 +35,13 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :telephone, :class => "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :telephone, placeholder: "enter telephone number here", :class => "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
         <%= f.label :billing, :class => "col-md-4 control-label" %>
         <div class="col-md-8">
           <%= f.collection_select :billing_id, Address.where(user_id: user.id), :id, :street_address, {}, :class => "form-control" %>
@@ -49,7 +56,7 @@
       </div>
 
       <%= (link_to "View Saved Adresses", admin_user_addresses_path(user.id)) if user.id %><br>
-      <%= f.submit submit(form_type, "User"), :class => "btn btn-large btn-primary btn-block" %>
+      <%= f.submit :class => "btn btn-large btn-primary btn-block" %>
     <% end %><br><br>
 
     <%= (link_to "Delete user", [:admin, @user], :method => :delete, :data => { confirm: "Are you sure?" }) if user.id %>
