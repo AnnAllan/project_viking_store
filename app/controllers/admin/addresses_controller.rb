@@ -1,4 +1,5 @@
 class Admin::AddressesController < AdminController
+  
   before_action :set_address, only: [:show, :edit, :update, :destroy]
 
   def index

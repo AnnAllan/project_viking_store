@@ -2,4 +2,4 @@
 <h4>Basic Information</h4>
 <p>Owner ID: <%= @user ? @user.id : "N/A" %></p>
 <p>Owner Name: <%= @user ? (link_to @user.name, admin_user_path(@user)) : "N/A" %></p>
-<p>Date Placed: <%= display_if(@order.checkout_date) %></p>
+<p>Date Placed: <%= @order.checkout_date ? "#{@order.checkout_date}" : "N/A" %></p>

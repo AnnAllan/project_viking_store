@@ -6,7 +6,7 @@
   <td><%= order.billing_address.nil? ? "N/A" : order.billing_address.state.name %></td>
   <td><%= order.quantity %></td>
   <td><%= number_to_currency(order.value) %></td>
-  <td><%= order_status(order) %></td>
+  <td>Temp Comment</td>
   <td><%= order.checkout_date %></td>
   <td><%= link_to "show", admin_user_order_path(order.user_id, order.id) %></td>
   <td><%= order.user ? (link_to "edit", edit_admin_user_order_path(order.user_id, order.id)) : "edit" %></td>
