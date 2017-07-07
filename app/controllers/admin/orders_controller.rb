@@ -1,4 +1,5 @@
 class Admin::OrdersController < ApplicationController
+  layout "admin"
 
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit]
@@ -15,6 +16,8 @@ class Admin::OrdersController < ApplicationController
     else
       @orders = Order.all
     end
+    puts "Test "
+
   end
 
   def new
