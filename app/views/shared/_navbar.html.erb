@@ -1,0 +1,16 @@
+<nav class="navbar navbar-fixed-top clearfix col-md-12" id="admin-navbar">
+  <div class="container">
+    <div class="col-md-6">
+      <%= link_to "Viking Store", root_path, :class => "navbar-brand" %>
+    </div>
+    <div class="col-md-1 col-md-offset-2">
+      <%= image_tag("viking_store_logo_small.png", :alt => "store logo") %>
+    </div>
+    <div class="col-md-3">
+      <ul>
+        <li><%= link_to "View Cart", edit_cart_path(0) %></li>
+        <li><%= link_to "Sign In", new_user_path %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

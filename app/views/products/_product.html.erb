@@ -1,0 +1,37 @@
+<article class="col-md-4 product-panel">
+  <div class = "product-wrapper">
+    <header class="row product-header">
+      <div class="col-md-12">
+        <h4><%= link_to product.name, "#" %></h4>
+      </div>
+    </header>
+
+    <div class="row middle">
+      <div class="col-md-12 description">
+        <p>Category: <%=product.category.name if product.category %></p>
+        <p>Description: <%= product.description %></p>
+      </div>
+      <div class = "col-md-12">
+        <%= image_tag "axe.png", :alt => "Axe" %>
+        <div class="col-md-4">
+          <p>
+            $ <%= product.price %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="row product-footer">
+      <div class="col-md-12">
+        <%= form_tag carts_path(0), method: "POST" do %>
+          <%= hidden_field_tag(:item, product.id) %>
+          <%= hidden_field_tag(:products_filter, @filter) %>
+          <%=submit_tag "Add to Cart", class: "btn btn-submit" %>
+        <% end %>
+      </div>
+    </footer>
+  </div>
+  <br />
+  <br />
+  <br />
+</article>

@@ -1,0 +1,30 @@
+<br />
+<br />
+<h1>Cart</h1>
+
+<%= form_tag cart_path, {method: "PUT"} do %>
+  <div>
+    <% @cart.each do |product_id, quantity| %>
+      <div class="row">
+        <div class="prod_image col-md-3">
+          <%= image_tag "axe.png", :alt => "Axe" %>
+        </div>
+        <div class="prod_name col-md-2">
+          <%= get_product(product_id).name %>
+        </div>
+        <div class="cat col-md-2">
+          <%= get_product(product_id).category.name %>
+        </div>
+        <div class="price col-me-2">
+          <%= get_product(product_id).price %>
+        </div>
+        <div class="quantity col-md-1" >
+          <%= "Quan"%>
+        </div>
+        <div class="total col-md-2">
+          <%= "Total" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<%end %>
