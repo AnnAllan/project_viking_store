@@ -70,23 +70,20 @@ puts "Creating 60 Products..."
 end
 puts "60 Products created."
 
-# puts "Creating 10 Orders..."
-# 10.times do |i|
-#   Order.create(checkout_date: Faker::Date.between(2.days.ago, Date.today),
-#                 user_id: i,
-#                 shipping_id: Address.where(user_id: i, shipping: true),
-#                 billing_id: Address.where(user_id: i, billing: true),
-#                 credit_card_id: CreditCard.id.where(user_id: i, default: true))
-# end
-# puts "10 Orders created."
-#
-# puts "Creating 10 Order Contents..."
-# 10.times do |i|
-#   oc = OrderContents.create
-#   3.times do |j|
-#     oc[:order_id] = i
-#     oc[:product_id] = rand(1..57) + j
-#     oc[:quantity] = rand(1..3) + 1
-#   end
-# end
-# puts "10 Order Contents Created."
+puts "Creating 10 Orders..."
+10.times do |i|
+  Order.create(checkout_date: Faker::Date.between(2.days.ago, Date.today),
+                user_id: i + 1,
+                shipping_id: 3 * i + 2,
+                billing_id: 3 * i + 1,
+                credit_card_id: i + i + 1)
+end
+puts "10 Orders created."
+
+puts "Creating 10 Order Contents..."
+10.times do |i|
+  OrderContent.create(order_id: i + 1,
+                      product_id: rand(59) + 1,
+                      quantity: rand(3) + 1)
+end
+puts "10 Order Contents Created."
