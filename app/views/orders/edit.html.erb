@@ -1,0 +1,79 @@
+<h1>Checkout</h1>
+<%= render "shared/errors", :object => @order %>
+<% if @order.credit_card_id %>
+  <%= render "shared/errors", :object => @order.credit_card_id %>
+<% end %>
+
+<%= form_for @order do |f| %>
+  <div class="panel col-md-6" >
+    <h2>Shipping and Billing Addresses</h2>
+    <div class="form-group">
+      <%= f.label :shipping_address %>
+      <%= f.collection_select :shipping_id, @order.user.addresses, :id, :street_address, {}, {class: "form-control"} %>
+    </div>
+    <div class="form-group">
+      <%= f.label :billing_address %>
+      <%= f.collection_select :billing_id, @order.user.addresses, :id, :street_address, {}, {class: "form-control"} %>
+      <%= link_to "Edit Saved Addresses", edit_user_path(@order.user) %>
+    </div>
+    <%= f.fields_for @order.credit_card_id do |credit_fields| %>
+      <div class="form-group">
+        <%= credit_fields.label :id, "Card Number" %>
+        <%= credit_fields.text_field :card_number, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= credit_fields.label :exp_month, "Month" %>
+        <%= credit_fields.text_field :exp_month, class: "form-control" %>
+        <%= credit_fields.label :exp_year, "Year" %>
+        <%= credit_fields.text_field :exp_year, class: "form-control" %>
+        <%= credit_fields.label :ccv, "CCV" %>
+        <%= credit_fields.text_field :ccv, class: "form-control" %>
+        <%= delete_credit_card(@order.credit_card_id) %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<div class="panel col-md-6">
+  <h2>Review and Complete Order</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>
+          Product
+        </th>
+        <th>
+          Quantity
+        </th>
+        <th>
+          Item Price
+        </th>
+        <th>
+          Total Price
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render 'order', contents: @order.order_contents %>
+    </tbody>
+  </table>
+  <div>
+    <%= link_to "Edit Order", edit_cart_path(0) %>
+    <%= link_to "Delete Order", cart_path, method: "delete" %>
+  </div>
+  <div>
+    <p>
+      Shipping :<%= number_to_currency(@order.value * 0.1) %>
+    </p>
+    <p>
+      Tax: <%= number_to_currency(@order.value * 0.1) %>
+    </p>
+    <p>
+      Total: <%= number_to_currency(@order.value * 1.2) %>
+    </p>
+  </div>
+</div>
+<div class="panel col-md-6">
+  <h2>Place Order</h2>
+  <%= order_fields.submit "Place Your Order", class: "btn, btn-primary" %>
+</div>
+</div>

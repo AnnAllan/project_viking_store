@@ -5,8 +5,10 @@ class CreateCreditCards < ActiveRecord::Migration
       t.integer  "card_number",                         null: false
       t.integer  "exp_month",                           null: false
       t.integer  "exp_year",                            null: false
+      t.integer  "ccv",                                 null: false
       t.string   "brand",       default: "VISA",        null: false
       t.integer  "user_id",                             null: false
+      t.boolean  "default_card"
       t.timestamps
     end
     add_index :credit_cards, :card_number, unique: true

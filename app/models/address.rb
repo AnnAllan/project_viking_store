@@ -1,7 +1,5 @@
 class Address < ApplicationRecord
   belongs_to :user
-  belongs_to :state
-  belongs_to :city
 
   has_many :orders_billed_here,
             class_name: "Order",
@@ -11,16 +9,7 @@ class Address < ApplicationRecord
             class_name: "Order",
             foreign_key: :shipping_id
 
-  validates :street_address, length: {maximum: 128},
-                            presence: true
-
-  validates :zip_code, numericality: {only_integer: true},
-                            presence: true,
-                            length: {is: 5}
-
-  validates :city_id, :state_id,
-                      length: {maximum: 64},
-                      numericality: {only_integer: true},
+  validates :city, :state_abbr, :zip_code, :street_address,
                       presence: true
 
   def full_address

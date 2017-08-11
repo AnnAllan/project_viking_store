@@ -7,7 +7,7 @@ class Order < ApplicationRecord
   belongs_to :billing_address,
               foreign_key: :billing_id,
               class_name: "Address"
-  belongs_to :credit_car
+  belongs_to :credit_card
   has_many :order_contents
   has_many :products, through: :order_contents
 

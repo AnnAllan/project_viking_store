@@ -5,8 +5,5 @@ class Category < ApplicationRecord
             presence: true,
             uniqueness: true,
             allow_blank: false,
-            allow_nil: false,
-            length: {
-              in: 4..16
-            }
+            allow_nil: false
 end
