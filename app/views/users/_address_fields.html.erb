@@ -1,34 +1,38 @@
+<div class="containter">
+  <%= f.fields_for(:addresses) do |address_fields| %>
+     <div class= "panel col-md-6">
+       <div class="form-group">
+         <%= address_fields.label :street_address %>
+         <%= address_fields.text_field :street_address, class: "form-control" %>
+       </div>
+       <div class="form-group">
+         <%= address_fields.label :city %>
+         <%= address_fields.text_field :city, class: "form-control" %>
+       </div>
+       <div class="form-group">
+         <%= address_fields.label :state_abbr %>
+         <%= address_fields.text_field :state_abbr, class: "form-control" %>
+       </div>
+       <div class="form-group">
+         <%= address_fields.label :zip_code %>
+         <%= address_fields.text_field :zip_code, class:"form-control" %>
+       </div>
 
-<h5>Addresses</h5>
-<h6>Billing Address</h6>
-<input type="hidden" name="billing_address" value=true />
-<%= f.fields_for(:addresses) do |address_fields| %>
-  <%= address_fields.label :street_address, class: "col-md-4 control-label"  %>
-  <div class="col-md-8">
-    <%= address_fields.text_field :street_address, placeholder: "enter street", class: "form-control"  %>
-  </div>
-  <br />
-  <%= address_fields.label :secondary_address, class: "col-md-4 control-label"  %>
-  <div class="col-md-8">
-    <%= address_fields.text_field :secondary_address, class: "form-control"  %>
-  </div>
-  <br />
-  <%= address_fields.label :city, class: "col-md-4 control-label"  %>
-  <div class="col-md-8">
-  <%= address_fields.text_field :city, class: "form-control"  %>
-  </div>
-  <br />
-  <%= address_fields.label :state_abbr, class: "col-md-4 control-label"  %>
-  <div class="col-md-8">
-    <%= address_fields.text_field :state_abbr, class: "form-control"  %>
-  </div>
-  <br />
-  <%= address_fields.label :zip, class: "col-md-4 control-label"  %>
-  <div class="col-md-8">
-    <%= address_fields.text_field :zip, class: "form-control"  %>
-  </div>
-  <br />
-  <br />
-  <br />
+       <div class="form-group">
+         <%= f.radio_button :billing_id, address_fields.index %>
+         <%= f.label :billing_address %>
+       </div>
+       <div class="form-group">
+         <%= f.radio_button :shipping_id, address_fields.index %>
+         <%= f.label :shipping_address %>
 
-<% end %>
+       </div>
+       <% if @user.persisted? %>
+         <div class="form-group">
+           <%= address_fields.check_box :_destroy %>
+           <%= address_fields.label :delete %>
+         </div>
+       <% end %>
+     </div>
+   <% end %>
+</div>

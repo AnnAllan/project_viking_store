@@ -2,7 +2,7 @@ class CreateCreditCards < ActiveRecord::Migration
   def change
     create_table :credit_cards do |t|
       t.string   "nickname",    default: "My Credit Card"
-      t.integer  "card_number",                         null: false
+      t.string   "card_number",                         null: false
       t.integer  "exp_month",                           null: false
       t.integer  "exp_year",                            null: false
       t.integer  "ccv",                                 null: false

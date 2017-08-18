@@ -1,0 +1,168 @@
+{
+  "basics": {
+    "name": "Ann Allan",
+    "label": "Full Stack Web Developer",
+    "picture": "",
+    "email": "ann.cristina.allan@gmail.com",
+    "phone": "412.860.1989",
+    "website": "https://ann-allan.herokuapp.com/",
+    "summary": "After my 2 years of Army service. I earned a degree in Theater and spent 16 years working my way up through the ranks of production and administration.  A few years back I attained the position of Production Manager and, for a while, Interim Managing Director for a regional theater company in DC.  As my passion for coding grew, the time felt right to take on the new challenge of making it a career. In my spare time I enjoy adding new technologies to my skill set. I also enjoy swing dancing, sports, crafts, hiking, baking, and escape rooms.",
+    "location": {
+      "address": "305 69th St.",
+      "postalCode": "MD 20743",
+      "city": "Capitol Heights",
+      "countryCode": "US",
+      "region": "Maryland"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "Ann Allan",
+        "url": "https://www.linkedin.com/in/ann-allan/"
+      },
+      {
+        "network": "Github",
+        "username": "Ann Allan",
+        "url": "https://github.com/AnnAllan"
+      },
+      {
+        "network": "Medium",
+        "username": "Ann Allan",
+        "url": "https://medium.com/@ann.cristina.allan"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Viking Code School",
+      "position": "Full Stack Web Developer",
+      "website": "vikingcodeschool.com",
+      "startDate": "2017",
+      "endDate": "Present",
+      "summary": "Built several fully developed and deployed web apps such as Personal Website, Dating App, Facebook Clone, and Online Retailer",
+      "highlights": [
+        "Design and implement database structures",
+        "Pair programming",
+        "Agile workflow using Pivotal Tracker"
+      ]
+    },
+    {
+      "company": "Synetic Theater",
+      "position": "Production Manager (Interim Managing Director)",
+      "website": "synetictheater.org",
+      "startDate": "2013",
+      "endDate": "2016",
+      "summary": "Responsible for overseeing all elements of production including budgeting, hiring, scheduling, touring, and season planning. Point of contact for all information about each production and special event. Additional Responsibilities included direct supervision of production assistants and interns as well as supervision of Rentals Associate to ensure customer satisfaction and achievement of revenue goals and supervision of Facilities Coordinator to ensure compliance with all industry standards and safety requirements.",
+      "highlights": [
+        "Developed and streamlined process for hiring and contract management to make it faster, more consistent, and less error-prone",
+        "Successfully coordinated all details for touring production to Juarez and Chihuahua, Mexico for Festival Internacional Chihuahua",
+        "Improved company's venue and equipment management to allow for increased revenue and patronage from rental events"
+      ]
+    },
+    {
+      "company": "Woolly Mammoth Theater Company",
+      "position": "Master Electrician",
+      "website": "woollymammoth.net",
+      "startDate": "2007",
+      "endDate": "2013",
+      "summary": "Responsible for overseeing all aspects of lighting department for Production, Rentals, and Facilities. Tasks include hiring of lighting personnel and ensuring payroll paperwork processed, maintaining lighting equipment and stock, managing department budgets, providing lateral service to other departments including Marketing, Development, and Rentals.",
+      "highlights": [
+        "Researched building electrical layout to accommodate increasing power needs and prevent overload.",
+        "Researched and implemented \"Green\" procedures and equipment with respect to energy consumption.",
+        "Increased potential for rental revenue by designing lighting package options to offer clients"
+      ]
+    },
+    {
+      "company": "Various Freelance and Contract Positions",
+      "position": "Various Freelance and Contract Positions",
+      "website": "",
+      "startDate": "2001",
+      "endDate": "2008",
+      "summary": "Cirkus Smirkus, Shakespeare Theater Company, GALA Hispanic Theater, American Family Theater, Tennessee Performing Arts Center, Opryland Hotel, Vanderbilt University",
+      "highlights": [
+        "Lighting Director, Master Electrician, Electrician",
+        "Production Stage Manager, Stage Manager, Assistant Stage Manager",
+        "Master Carpenter, Carpenter, Sound Engineer, Wardrobe Manager"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "Pittstop Lindy Hop",
+      "position": "Committee Member",
+      "website": "http://www.pittstoplindyhop.com/",
+      "startDate": "2016",
+      "endDate": "Present",
+      "summary": "PittStop welcomes dancers of all ages and experience to a high-energy weekend of swing dancing with 30 hours of music and dancing fun!",
+      "highlights": []
+    },
+    {
+      "organization": "Pioneers ",
+      "position": "Volunteer",
+      "website": "https://www.pioneersvolunteer.org/",
+      "startDate": "2015",
+      "endDate": "Present",
+      "summary": "Personal Contribution: producing 100 sets of mittens and hats for the homeless each year",
+      "highlights": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "Middle Tennessee State University",
+      "area": "Speech and Theater",
+      "studyType": "Bachelor",
+      "startDate": "2000",
+      "endDate": "2003",
+      "gpa": "",
+      "courses": []
+    },
+    {
+      "institution": "Codeacademy",
+      "area": "Full Stack Web Development Path",
+      "studyType": "",
+      "startDate": "2016",
+      "endDate": "2016",
+      "gpa": "",
+      "courses": []
+    },
+    {
+      "institution": "Skillcrush",
+      "area": "Ruby on Rails Blueprint",
+      "studyType": "",
+      "startDate": "2016",
+      "endDate": "2016",
+      "gpa": "",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "",
+      "keywords": [
+        "Ruby",
+        "Ruby on Rails",
+        "HTML/CSS",
+        "Bootstrap",
+        "Javascript",
+        "JQuery",
+        "Git"
+      ]
+    },
+    {
+      "name": "Excellent oral and written communication skills                                                                                                                                        ",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Leadership and Organizational Skills developed during 2+ years of US Army Service",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [],
+  "interests": [],
+  "references": []
+}

@@ -1,13 +1,14 @@
 class User < ApplicationRecord
+  has_many :addresses
+  accepts_nested_attributes_for :addresses,
+                                allow_destroy: true,
+                                reject_if: :all_blank
   belongs_to :billing_address,
               class_name: "Address",
-              :foreign_key => :billing_id
-
+              foreign_key: :billing_id
   belongs_to :shipping_address,
               class_name: "Address",
-              :foreign_key => :shipping_id
-
-  has_many :addresses
+              foreign_key: :shipping_id
   has_many :orders
   has_many :credit_cards, dependent: :destroy
   has_many :products, through: :order_contents

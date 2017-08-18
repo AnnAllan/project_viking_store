@@ -23,8 +23,8 @@
 
     <footer class="row product-footer">
       <div class="col-md-12">
-        <%= form_tag carts_path(0), method: "POST" do %>
-          <%= hidden_field_tag(:item, product.id) %>
+        <%= form_tag carts_path, method: "POST" do %>
+          <%= hidden_field_tag(:product, product.id) %>
           <%= hidden_field_tag(:products_filter, @filter) %>
           <%=submit_tag "Add to Cart", class: "btn btn-submit" %>
         <% end %>

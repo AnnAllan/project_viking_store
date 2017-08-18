@@ -1,13 +1,13 @@
 class CartsController < ApplicationController
   def create
     session[:cart] ||= {}
-    item = params[:item]
+    product = params[:product]
 
-    if Product.exists?(item) && session[:cart][item]
-      session[:cart][item] += 1
+    if Product.exists?(product) && session[:cart][product]
+      session[:cart][product] += 1
       flash[:success] = "Added item to cart."
-    elsif Product.exists?(item)
-      session[:cart][item] = 1
+    elsif Product.exists?(product)
+      session[:cart][product] = 1
       flash[:success] = "Item added to cart."
     else
       flash[:error] = "Item could not be added to cart."

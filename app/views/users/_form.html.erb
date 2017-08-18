@@ -6,39 +6,7 @@
 
 <%= render "shared/errors", object: @user %>
 <%= form_for @user do |f| %>
-  <%= f.fields_for(:addresses) do |address_fields| %>
-    <div class= "panel col-md-6">
-      <div class="form-group">
-        <%= address_fields.label :street_address %>
-        <%= address_fields.text_field :street_address, class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= address_fields.label :city_id %>
-        <%= address_fields.text_field :city_id, class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= address_fields.collection_select :state_id, State.all, :id, :name, {prompt: "Please choose your state."}, {class: "form-control"} %>
-      </div>
-      <div class="form-group">
-        <%= address_fields.label :zip_code %>
-        <%= address_fields.text_field :zip_code, class:"form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.radio_button :billing_id, address_fields.index %>
-        <%= address_fields.label :billing_address %>
-      </div>
-      <div class="form-group">
-        <%= f.radio_button :shipping_id, address_fields.index %>
-        <%= address_fields.label :shipping_address %>
-      </div>
-      <% if @user.persisted? %>
-        <div class="form-group">
-          <%= address_fields.check_box :_destroy %>
-          <%= address_fields.label :delete %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+  <%= render partial: "address_fields", locals: {f: f} %>
   <div class="panel col-md-6">
     <div class="form-group">
       <%= f.label :email %>

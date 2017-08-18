@@ -9,7 +9,7 @@ class Address < ApplicationRecord
             class_name: "Order",
             foreign_key: :shipping_id
 
-  validates :city, :state_abbr, :zip_code, :street_address,
+  validates :city, :state_abbr, :zip_code, :street_address, :user_id,
                       presence: true
 
   def full_address
